@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python3 \
         python3-dev \
         python3-pip \
+        python3-setuptools \
         rsync \
         software-properties-common \
         unzip \
@@ -20,7 +21,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-RUN pip3 --no-cache-dir install \
+RUN pip3 --no-cache-dir install --upgrade \
+        pip \
         ipykernel \
         jupyter \
         matplotlib \
@@ -38,11 +40,14 @@ RUN pip3 --no-cache-dir install \
 
 RUN ln -s /usr/bin/python3 /usr/bin/python
 
+# Suppress pip deprecation warning 
+COPY pip.conf /root/.pip/
+
 # Set up our notebook config.
 COPY jupyter/jupyter_notebook_config.py /root/.jupyter/
 
 # Copy sample notebooks.
-COPY notebooks/tensorflow /notebooks
+COPY notebooks /notebooks
 
 # Jupyter has issues with being run directly:
 #   https://github.com/ipython/ipython/issues/7062
