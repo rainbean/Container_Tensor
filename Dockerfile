@@ -12,16 +12,13 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         pkg-config \
         python3 \
         python3-dev \
+        python3-pip \
         rsync \
         software-properties-common \
         unzip \
         && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
-
-RUN curl -O https://bootstrap.pypa.io/get-pip.py && \
-    python3 get-pip.py && \
-    rm get-pip.py
 
 RUN pip3 --no-cache-dir install \
         ipykernel \
