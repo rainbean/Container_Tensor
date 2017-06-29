@@ -36,7 +36,7 @@ RUN pip3 --no-cache-dir install --upgrade \
 
 # Install TensorFlow CPU version from central repo
 RUN pip3 --no-cache-dir install \
-    https://bazel.blob.core.windows.net/tensorflow/tensorflow-gpu-1.2.1-cp35-cp35m-linux_x86_64.whl
+    https://bazel.blob.core.windows.net/tensorflow-gpu/tensorflow-1.2.1-cp35-cp35m-linux_x86_64.whl
 
 # RUN ln -s /usr/bin/python3 /usr/bin/python
 
