@@ -1,4 +1,4 @@
-FROM nvidia/cuda:8.0-cudnn5-runtime-ubuntu16.04
+FROM nvidia/cuda:8.0-cudnn6-runtime-ubuntu16.04
 
 LABEL maintainer "Jimmy Lee"
 
@@ -30,13 +30,14 @@ RUN pip3 --no-cache-dir install --upgrade \
         scipy \
         sklearn \
         pandas \
+        seaborn \
         Pillow \
         && \
     python3 -m ipykernel.kernelspec
 
 # Install TensorFlow CPU version from central repo
 RUN pip3 --no-cache-dir install \
-    https://bazel.blob.core.windows.net/tensorflow-gpu/tensorflow-1.2.1-cp35-cp35m-linux_x86_64.whl
+    https://bazel.blob.core.windows.net/tensorflow-gpu/tensorflow-1.3.0-cp35-cp35m-linux_x86_64.whl
 
 # RUN ln -s /usr/bin/python3 /usr/bin/python
 
