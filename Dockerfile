@@ -1,4 +1,4 @@
-FROM nvidia/cuda:8.0-cudnn6-runtime-ubuntu16.04
+FROM nvidia/cuda:9.1-cudnn7-runtime-ubuntu16.04
 
 LABEL maintainer "Jimmy Lee"
 
@@ -37,7 +37,7 @@ RUN pip3 --no-cache-dir install --upgrade \
 
 # Install TensorFlow 
 RUN pip3 --no-cache-dir install \
-    https://bazel.blob.core.windows.net/tensorflow-gpu/tensorflow-1.4.0-cp35-cp35m-linux_x86_64.whl
+    https://bazel.blob.core.windows.net/cuda9/tensorflow-1.5.0-cp35-cp35m-linux_x86_64.whl
 
 # RUN ln -s /usr/bin/python3 /usr/bin/python
 
