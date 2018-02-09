@@ -10,7 +10,7 @@ Fork from official TensorFlow repository, optimize for development
 
 ### Python packages
 
-- TensorFlow 1.3.0
+- TensorFlow 1.4.0
 - Numpy 1.13.0
 - Matplotlib 2.0.2
 - Scipy 0.19.1
