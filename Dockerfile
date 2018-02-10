@@ -21,6 +21,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
+# Install Python package
 RUN pip3 --no-cache-dir install --upgrade \
         pip \
         ipykernel \
@@ -32,12 +33,10 @@ RUN pip3 --no-cache-dir install --upgrade \
         pandas \
         seaborn \
         Pillow \
+        Keras \
+		https://bazel.blob.core.windows.net/cuda9/tensorflow-1.5.0-cp35-cp35m-linux_x86_64.whl \
         && \
     python3 -m ipykernel.kernelspec
-
-# Install TensorFlow 
-RUN pip3 --no-cache-dir install \
-    https://bazel.blob.core.windows.net/cuda9/tensorflow-1.5.0-cp35-cp35m-linux_x86_64.whl
 
 # RUN ln -s /usr/bin/python3 /usr/bin/python
 

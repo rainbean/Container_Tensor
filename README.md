@@ -11,6 +11,7 @@ Fork from official TensorFlow repository, optimize for development
 ### Python packages
 
 - TensorFlow 1.5.0
+- Keras
 - Numpy
 - Matplotlib
 - Scipy
