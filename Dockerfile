@@ -14,6 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python3-dev \
         python3-pip \
         python3-setuptools \
+        python3-tk \
         rsync \
         software-properties-common \
         unzip \
@@ -34,7 +35,7 @@ RUN pip3 --no-cache-dir install --upgrade \
         seaborn \
         Pillow \
         Keras \
-		https://bazel.blob.core.windows.net/cuda9/tensorflow-1.5.0-cp35-cp35m-linux_x86_64.whl \
+        https://bazel.blob.core.windows.net/cuda9/tensorflow-1.5.0-cp35-cp35m-linux_x86_64.whl \
         && \
     python3 -m ipykernel.kernelspec
 
