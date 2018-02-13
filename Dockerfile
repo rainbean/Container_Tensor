@@ -44,6 +44,9 @@ RUN pip3 --no-cache-dir install --upgrade \
 # Suppress pip deprecation warning 
 COPY pip.conf /root/.pip/
 
+# Assign default matplotlib backend to Agg
+COPY matplotlibrc /root/.config/matplotlib/
+
 # Set up our notebook config.
 COPY jupyter/jupyter_notebook_config.py /root/.jupyter/
 
