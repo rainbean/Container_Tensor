@@ -4,7 +4,7 @@ Fork from official TensorFlow repository, optimize for development
 
 ### Feature
 
-- Python 3.5
+- Python 3.6
 - Intel Math Kernel Library (MKL)
 - Optimize for CPU parallelism (eg. SSE)
 
@@ -18,8 +18,8 @@ Fork from official TensorFlow repository, optimize for development
 - Pandas
 - Seaborn
 - Scikit-learn
+- Scikit-image
 - Tornado
-- Protobuf
 - Jupyter notebook
 
 ### Usage
