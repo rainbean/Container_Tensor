@@ -2,16 +2,12 @@
 
 Fork from official TensorFlow repository, optimize for development
 
-### Feature
-
-- Python 3.6
-- Intel Math Kernel Library (MKL)
-- Optimize for CPU parallelism (eg. SSE)
-
 ### Python packages
 
+- Python 3.6
 - TensorFlow 1.5.0
 - Keras
+- OpenCV 3.4.0
 - Numpy
 - Matplotlib
 - Scipy
@@ -21,6 +17,7 @@ Fork from official TensorFlow repository, optimize for development
 - Scikit-image
 - Tornado
 - Jupyter notebook
+- Intel Math Kernel Library (MKL)
 
 ### Usage
 
