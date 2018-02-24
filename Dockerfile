@@ -40,10 +40,11 @@ RUN conda install \
 RUN pip --no-cache-dir install --no-deps \
         Keras \
         https://bazel.blob.core.windows.net/cuda9/tensorflow-1.5.0-cp36-cp36m-linux_x86_64.whl \
-        https://bazel.blob.core.windows.net/opencv/opencv_python-3.4.0%2B2329983-cp36-cp36m-linux_x86_64.whl
+        https://bazel.blob.core.windows.net/opencv/opencv_python-3.4.0%2B2329983-cp36-cp36m-linux_x86_64.whl \
+        tensorboardX
 
 # install pytorch
-RUN conda install pytorch torchvision cuda91 tensorboardx -y -c conda-forge -c pytorch 
+RUN conda install pytorch torchvision cuda91 -c pytorch
 
 # Suppress pip deprecation warning 
 COPY pip.conf /root/.pip/
