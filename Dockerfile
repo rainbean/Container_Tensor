@@ -11,7 +11,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         ffmpeg \
         openexr \
         webp \
-        libgtk2.0-0 \
         && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -37,11 +36,14 @@ RUN conda install \
         Pillow \
         tqdm
 
-# install tensorflow & keras
-RUN pip --no-cache-dir install --upgrade \
+# install tensorflow, keras and opencv-python
+RUN pip --no-cache-dir install --no-deps \
         Keras \
         https://bazel.blob.core.windows.net/cuda9/tensorflow-1.5.0-cp36-cp36m-linux_x86_64.whl \
         https://bazel.blob.core.windows.net/opencv/opencv_python-3.4.0%2B2329983-cp36-cp36m-linux_x86_64.whl
+
+# install pytorch
+RUN conda install pytorch torchvision cuda91 tensorboardx -y -c conda-forge -c pytorch 
 
 # Suppress pip deprecation warning 
 COPY pip.conf /root/.pip/
