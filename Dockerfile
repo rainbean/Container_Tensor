@@ -24,7 +24,7 @@ RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
 ENV PATH /opt/conda/bin:$PATH
 
 # install python packages
-RUN conda install \
+RUN conda install -q \
         jupyter \
         matplotlib \
         numpy \
@@ -37,14 +37,14 @@ RUN conda install \
         tqdm
 
 # install tensorflow, keras and opencv-python
-RUN pip --no-cache-dir install --no-deps \
+RUN pip --no-cache-dir install \
         Keras \
         https://bazel.blob.core.windows.net/cuda9/tensorflow-1.5.0-cp36-cp36m-linux_x86_64.whl \
         https://bazel.blob.core.windows.net/opencv/opencv_python-3.4.0%2B2329983-cp36-cp36m-linux_x86_64.whl \
         tensorboardX
 
 # install pytorch
-RUN conda install pytorch torchvision cuda91 -c pytorch
+RUN conda install -q pytorch torchvision cuda91 -c pytorch
 
 # Suppress pip deprecation warning 
 COPY pip.conf /root/.pip/
