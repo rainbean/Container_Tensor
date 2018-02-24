@@ -36,7 +36,7 @@ RUN conda install \
 # install tensorflow & keras
 RUN pip --no-cache-dir install --upgrade \
         Keras \
-        https://bazel.blob.core.windows.net/cuda9/tensorflow-1.5.0-cp35-cp35m-linux_x86_64.whl
+        https://bazel.blob.core.windows.net/cuda9/tensorflow-1.5.0-cp36-cp36m-linux_x86_64.whl
 
 # Suppress pip deprecation warning 
 COPY pip.conf /root/.pip/
