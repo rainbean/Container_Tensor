@@ -13,7 +13,7 @@ Baked machine learning framework stack, CUDA backend
 ### Python packages
 
 - Python 3.6
-- TensorFlow 1.5.0
+- TensorFlow 1.6.0
 - Keras 2.1.4
 - OpenCV 3.4.0
 - PyTorch 0.3.1
