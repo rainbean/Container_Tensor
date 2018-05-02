@@ -39,7 +39,7 @@ RUN conda install -q \
 # install tensorflow, keras and opencv-python
 RUN pip --no-cache-dir install \
         Keras \
-        https://bazel.blob.core.windows.net/cuda9/tensorflow-1.6.0-cp36-cp36m-linux_x86_64.whl \
+        https://bazel.blob.core.windows.net/tensorflow-gpu/tensorflow-1.8.0-cp36-cp36m-linux_x86_64.whl \
         https://bazel.blob.core.windows.net/opencv/opencv_python-3.4.0%2B2329983-cp36-cp36m-linux_x86_64.whl \
         tensorboardX
 
