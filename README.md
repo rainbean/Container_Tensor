@@ -25,7 +25,7 @@ Baked machine learning framework stack, CUDA backend
 - Scikit-learn
 - Scikit-image
 - Tornado
-- Jupyter notebook
+- JupyterLab
 - Intel Math Kernel Library (MKL)
 - FFMpeg
 

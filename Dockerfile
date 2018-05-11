@@ -25,7 +25,7 @@ ENV PATH /opt/conda/bin:$PATH
 
 # install python packages
 RUN conda install -q \
-        jupyter \
+        jupyterlab \
         matplotlib \
         numpy \
         scipy \
