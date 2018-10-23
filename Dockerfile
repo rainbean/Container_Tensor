@@ -34,7 +34,7 @@ RUN conda install -q -y \
         tqdm \
         tensorflow-gpu \
         tensorboard \
-        cudatoolkit=9.0 \
+        cudatoolkit=9.0 
 
 # install pytorch
 RUN conda install -y -q pytorch torchvision -c pytorch
