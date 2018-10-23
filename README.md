@@ -2,32 +2,18 @@
 
 Baked machine learning framework stack, CUDA backend
 
-### Feature
-
-- TensorFlow
-- Keras
-- PyTorch
-- OpenCV
-- Jupyter Notebook
-
 ### Python packages
 
-- Python 3.6.5
-- TensorFlow 1.8.0
-- Keras 2.1.6
-- OpenCV 3.4.0
-- PyTorch 0.4.0
+- Python 3.6.6
+- TensorFlow 1.10
+- PyTorch 0.4.1
+- JupyterLab
 - Numpy
 - Matplotlib
 - Scipy
 - Pandas
-- Seaborn
 - Scikit-learn
 - Scikit-image
-- Tornado
-- JupyterLab
-- Intel Math Kernel Library (MKL)
-- FFMpeg
 
 ### Usage
 
