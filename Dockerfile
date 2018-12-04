@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         bzip2 \
         ca-certificates \
         curl \
+        libsm6 libxext6 libxrender1 \
         && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
@@ -39,6 +40,9 @@ RUN conda install -q -y \
 # install pytorch
 RUN conda install -y -q pytorch torchvision -c pytorch
 RUN conda install -y -q tensorboardX -c conda-forge
+
+# install opencv-python
+RUN pip --no-cache-dir install opencv-python
 
 # Suppress pip deprecation warning 
 COPY pip.conf /root/.pip/
