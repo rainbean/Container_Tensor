@@ -4,9 +4,11 @@ Baked machine learning framework stack, CUDA backend
 
 ### Python packages
 
-- Python 3.6.6
-- TensorFlow 1.12
-- PyTorch 0.4.1
+- Ubuntu 18.04
+- CUDA 10 (require nivida 410+ driver)
+- Python 3.6.7
+- TensorFlow 1.12 (CPU)
+- PyTorch 1.0.0
 - JupyterLab
 - Numpy
 - Matplotlib

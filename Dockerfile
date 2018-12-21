@@ -1,48 +1,37 @@
-FROM nvidia/cuda:9.0-runtime-ubuntu16.04
+FROM nvidia/cuda:10.0-runtime-ubuntu18.04
 
 LABEL maintainer "Jimmy Lee"
 
 # Pick up some TF dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-        wget \
-        bzip2 \
-        ca-certificates \
-        curl \
+        wget bzip2 ca-certificates curl \
         libsm6 libxext6 libxrender1 \
+        libgomp1 libglib2.0-0 \
+        python3 \
+        python3-pip \
+        python3-setuptools \
+        python3-wheel \
+        python3-numpy \
+        python3-h5py \
+        python3-scipy \
+        python3-matplotlib \
+        python3-pandas \
+        python3-sklearn \
+        python3-tqdm \
         && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Install mini conda
-RUN echo 'export PATH=/opt/conda/bin:$PATH' > /etc/profile.d/conda.sh && \
-    wget --quiet https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
-    /bin/bash ~/miniconda.sh -b -p /opt/conda && \
-    rm ~/miniconda.sh
-
-ENV PATH /opt/conda/bin:$PATH
-
 # install python packages
-RUN conda install -q -y \
-        python=3.6 \
+RUN pip3 install --no-cache-dir -q --only-binary all \
         jupyterlab \
-        matplotlib \
-        numpy \
-        scipy \
-        scikit-learn \
-        scikit-image==0.13.1 \
-        pandas \
         Pillow \
-        tqdm \
-        tensorflow-gpu \
+        scikit-image==0.13.1 \
+        tensorflow \
         tensorboard \
-        cudatoolkit=9.0 
-
-# install pytorch
-RUN conda install -y -q pytorch torchvision -c pytorch
-RUN conda install -y -q tensorboardX -c conda-forge
-
-# install opencv-python
-RUN pip --no-cache-dir install opencv-python
+        opencv-python \
+        https://download.pytorch.org/whl/cu100/torch-1.0.0-cp36-cp36m-linux_x86_64.whl \
+        torchvision
 
 # Suppress pip deprecation warning 
 COPY pip.conf /root/.pip/
@@ -51,7 +40,7 @@ COPY pip.conf /root/.pip/
 COPY matplotlibrc /root/.config/matplotlib/
 
 # Set up jupyer notebook config.
-RUN python -m ipykernel.kernelspec
+RUN python3 -m ipykernel.kernelspec
 COPY jupyter/jupyter_notebook_config.py /root/.jupyter/
 
 # Copy sample notebooks.
