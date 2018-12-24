@@ -19,7 +19,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python3-sklearn \
         python3-tqdm \
         && \
-    cd /usr/bin && ln -s python3 python && ln -s pip3 pip \
+    cd /usr/bin && ln -s python3 python && ln -s pip3 pip && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
