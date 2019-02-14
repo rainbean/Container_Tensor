@@ -8,7 +8,7 @@ Baked machine learning framework stack, CUDA backend
 - CUDA 10 (require nivida 410+ driver)
 - Python 3.6.7
 - TensorFlow 1.12 (CPU)
-- PyTorch 1.0.0
+- PyTorch 1.0.1
 - JupyterLab
 - Numpy
 - Matplotlib
@@ -16,7 +16,7 @@ Baked machine learning framework stack, CUDA backend
 - Pandas
 - Scikit-learn
 - Scikit-image
-- OpenCV
+- OpenCV 4.0
 
 ### Usage
 

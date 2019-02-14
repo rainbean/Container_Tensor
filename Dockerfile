@@ -27,11 +27,11 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN pip3 install --no-cache-dir -q --only-binary all \
         jupyterlab \
         Pillow \
-        scikit-image==0.13.1 \
+        scikit-image \
         tensorflow \
         tensorboard \
         opencv-python \
-        https://download.pytorch.org/whl/cu100/torch-1.0.0-cp36-cp36m-linux_x86_64.whl \
+        https://download.pytorch.org/whl/cu100/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl \
         torchvision \
         tensorboardX
 
