@@ -11,13 +11,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python3-pip \
         python3-setuptools \
         python3-wheel \
-        python3-numpy \
-        python3-h5py \
-        python3-scipy \
-        python3-matplotlib \
-        python3-pandas \
-        python3-sklearn \
-        python3-tqdm \
         && \
     cd /usr/bin && ln -s python3 python && ln -s pip3 pip && \
     apt-get clean && \
@@ -25,9 +18,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # install python packages
 RUN pip3 install --no-cache-dir -q --only-binary all \
+        numpy \
+        scipy \
+        pandas \
+        h5py \
+        tqdm \
+        matplotlib \
         jupyterlab \
         Pillow \
         scikit-image \
+        scikit-learn \
         tensorflow \
         tensorboard \
         opencv-python \

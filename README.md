@@ -10,12 +10,12 @@ Baked machine learning framework stack, CUDA backend
 - TensorFlow 1.12 (CPU)
 - PyTorch 1.0.1
 - JupyterLab
-- Numpy
+- Numpy 1.16.1
 - Matplotlib
-- Scipy
-- Pandas
-- Scikit-learn
-- Scikit-image
+- Scipy 1.2.1
+- Pandas 0.24.1
+- Scikit-learn 0.20.2
+- Scikit-image 0.14.2
 - OpenCV 4.0
 
 ### Usage
