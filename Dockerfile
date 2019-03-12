@@ -23,12 +23,13 @@ RUN pip3 install --no-cache-dir -q --only-binary all \
         pandas \
         h5py \
         tqdm \
+        polyline \
         matplotlib \
         jupyterlab \
         Pillow \
         scikit-image \
         scikit-learn \
-        tensorflow \
+        tensorflow-gpu \
         tensorboard \
         opencv-python \
         https://download.pytorch.org/whl/cu100/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl \
