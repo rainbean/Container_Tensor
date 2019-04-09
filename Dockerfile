@@ -7,7 +7,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         wget bzip2 ca-certificates curl \
         libsm6 libxext6 libxrender1 \
         libgomp1 libglib2.0-0 \
-        openslide-tools \
         python3 \
         python3-pip \
         python3-setuptools \
@@ -18,7 +17,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 
 # install python packages
-RUN pip3 install --no-cache-dir -q --only-binary all -U \
+RUN pip3 install --no-cache-dir -q --only-binary all \
         numpy \
         scipy \
         pandas \
@@ -26,8 +25,6 @@ RUN pip3 install --no-cache-dir -q --only-binary all -U \
         tqdm \
         polyline \
         matplotlib \
-        jupyterlab \
-        openslide-python \
         Pillow \
         scikit-image \
         scikit-learn \
@@ -43,24 +40,3 @@ COPY pip.conf /root/.pip/
 
 # Assign default matplotlib backend to Agg
 COPY matplotlibrc /root/.config/matplotlib/
-
-# Set up jupyer notebook config.
-RUN python3 -m ipykernel.kernelspec
-COPY jupyter/jupyter_notebook_config.py /root/.jupyter/
-
-# Copy sample notebooks.
-COPY notebooks /mnt
-
-# Jupyter has issues with being run directly:
-#   https://github.com/ipython/ipython/issues/7062
-# We just add a little wrapper script.
-COPY jupyter/run_jupyter.sh /
-
-# TensorBoard
-EXPOSE 6006
-# IPython
-EXPOSE 8888
-
-WORKDIR "/mnt"
-
-CMD ["/run_jupyter.sh", "--allow-root", "--no-browser"]
