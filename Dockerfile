@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         wget bzip2 ca-certificates curl \
         libsm6 libxext6 libxrender1 \
         libgomp1 libglib2.0-0 \
+        openslide-tools \
         python3 \
         python3-pip \
         python3-setuptools \
@@ -26,6 +27,7 @@ RUN pip3 install --no-cache-dir -q --only-binary all \
         polyline \
         matplotlib \
         jupyterlab \
+        openslide-python \
         Pillow \
         scikit-image \
         scikit-learn \
