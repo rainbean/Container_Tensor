@@ -18,7 +18,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 
 # install python packages
-RUN pip3 install --no-cache-dir -q --only-binary all \
+RUN pip3 install --no-cache-dir -q --only-binary all -U \
         numpy \
         scipy \
         pandas \
