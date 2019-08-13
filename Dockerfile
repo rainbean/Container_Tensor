@@ -21,19 +21,17 @@ RUN pip3 install --no-cache-dir -q --only-binary all \
         numpy \
         scipy \
         pandas \
-        h5py \
         tqdm \
         polyline \
         matplotlib \
         Pillow \
         scikit-image \
         scikit-learn \
-        tensorflow \
         tensorboard \
         opencv-python \
-        https://download.pytorch.org/whl/cu100/torch-1.0.1.post2-cp36-cp36m-linux_x86_64.whl \
-        torchvision \
-        tensorboardX
+        xlsx2csv piexif tifffile future \
+        torch \
+        torchvision
 
 # Suppress pip deprecation warning 
 COPY pip.conf /root/.pip/
