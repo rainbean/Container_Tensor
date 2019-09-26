@@ -2,7 +2,7 @@ FROM nvidia/cuda:10.0-runtime-ubuntu18.04
 
 LABEL maintainer "Jimmy Lee"
 
-# Pick up some TF dependencies
+# Pick up some dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
         wget bzip2 ca-certificates curl \
         libsm6 libxext6 libxrender1 \
@@ -29,9 +29,9 @@ RUN pip3 install --no-cache-dir -q --only-binary all \
         scikit-learn \
         tensorboard \
         opencv-python \
-        xlsx2csv piexif tifffile future \
         torch \
-        torchvision
+        torchvision \
+        xlsx2csv piexif tifffile future pyclipper
 
 # Suppress pip deprecation warning 
 COPY pip.conf /root/.pip/
