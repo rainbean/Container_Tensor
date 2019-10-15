@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.0-runtime-ubuntu18.04
+FROM nvidia/cuda:10.1-runtime-ubuntu18.04
 
 LABEL maintainer "Jimmy Lee"
 

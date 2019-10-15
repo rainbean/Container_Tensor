@@ -5,9 +5,9 @@ Baked machine learning framework stack, CUDA backend
 ### Python packages
 
 - Ubuntu 18.04
-- CUDA 10.0 (require nivida 410 driver)
+- CUDA 10.1 (require nivida 418+ driver)
 - Python 3.6.8
-- PyTorch 1.2.0
+- PyTorch 1.3.0
 - Numpy 1.17.0
 - Matplotlib 3.1.1
 - Scipy 1.3.1
