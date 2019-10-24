@@ -31,7 +31,12 @@ RUN pip3 install --no-cache-dir -q --only-binary all \
         opencv-python \
         torch \
         torchvision \
-        xlsx2csv piexif tifffile future pyclipper
+        xlsx2csv \
+        piexif \
+        tifffile \
+        future \
+        pyclipper \
+        pyminifier
 
 # Suppress pip deprecation warning 
 COPY pip.conf /root/.pip/
