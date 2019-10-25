@@ -4,10 +4,12 @@ LABEL maintainer "Jimmy Lee"
 
 # Pick up some dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
+        build-essential \
         wget bzip2 ca-certificates curl \
         libsm6 libxext6 libxrender1 \
         libgomp1 libglib2.0-0 \
         python3 \
+        python3-dev \
         python3-pip \
         python3-setuptools \
         python3-wheel \
@@ -18,6 +20,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 # install python packages
 RUN pip3 install --no-cache-dir -q --only-binary all \
+        cython \
         numpy \
         scipy \
         pandas \
@@ -35,8 +38,7 @@ RUN pip3 install --no-cache-dir -q --only-binary all \
         piexif \
         tifffile \
         future \
-        pyclipper \
-        https://github.com/rainbean/pyminifier/releases/download/2.2-utf8/pyminifier-2.2-py3-none-any.whl
+        pyclipper
 
 # Suppress pip deprecation warning 
 COPY pip.conf /root/.pip/
