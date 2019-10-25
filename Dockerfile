@@ -36,7 +36,7 @@ RUN pip3 install --no-cache-dir -q --only-binary all \
         tifffile \
         future \
         pyclipper \
-        pyminifier
+        https://github.com/rainbean/pyminifier/releases/download/2.2-utf8/pyminifier-2.2-py3-none-any.whl
 
 # Suppress pip deprecation warning 
 COPY pip.conf /root/.pip/
