@@ -7,7 +7,8 @@ LABEL maintainer "Jimmy Lee"
 #   https://github.com/szelenka/shrink-linalg/blob/master/Dockerfile
 
 # Pick up some dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
         build-essential gcc gfortran \
         wget bzip2 ca-certificates curl \
         libsm6 libxext6 libxrender1 \
@@ -20,22 +21,23 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
         python3-setuptools \
         python3-wheel \
         && \
-    cd /usr/bin && ln -s python3 python && ln -s pip3 pip && \
+    cd /usr/bin && \
+    ln -s python3 python && \
+    ln -s pip3 pip && \
     apt-get clean && \
     apt-get purge -y --auto-remove && \
     rm -rf /var/lib/apt/lists/*
 
 # install python packages
-RUN CFLAGS="-g0 -Wl,--strip-all" \
-    pip3 install --no-cache-dir -q --only-binary all --compile --global-option build_ext \
-        cython \
+RUN pip3 install --no-cache-dir -q --only-binary all --compile \
+        Cython \
         numpy \
         scipy \
         pandas \
-        tqdm \
-        polyline \
         matplotlib \
         Pillow \
+        tqdm \
+        polyline \
         scikit-image \
         scikit-learn \
         tensorboard \
