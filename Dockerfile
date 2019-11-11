@@ -37,7 +37,6 @@ RUN pip3 install --no-cache-dir -q --only-binary all --compile \
         matplotlib \
         Pillow \
         tqdm \
-        polyline \
         scikit-image \
         scikit-learn \
         tensorboard \
@@ -48,6 +47,7 @@ RUN pip3 install --no-cache-dir -q --only-binary all --compile \
         piexif \
         tifffile \
         future \
+        polyline \
         pyclipper
 
 # Suppress pip deprecation warning 
