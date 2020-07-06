@@ -1,4 +1,4 @@
-FROM nvidia/cuda:10.1-runtime-ubuntu18.04
+FROM nvidia/cuda:10.2-runtime-ubuntu18.04
 
 LABEL maintainer "Jimmy Lee"
 
@@ -43,10 +43,10 @@ RUN pip3 install --no-cache-dir -q --only-binary all --compile \
         opencv-python \
         torch \
         torchvision \
-        xlsx2csv \
         piexif \
         tifffile \
         future \
+        fastjsonschema \
         polyline \
         pyclipper
 
