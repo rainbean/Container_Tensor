@@ -1,10 +1,6 @@
-FROM nvidia/cuda:10.2-runtime-ubuntu18.04
+FROM nvidia/cuda:11.0-runtime-ubuntu20.04
 
 LABEL maintainer "Jimmy Lee"
-
-# Reference
-#   https://towardsdatascience.com/how-to-shrink-numpy-scipy-pandas-and-matplotlib-for-your-data-product-4ec8d7e86ee4
-#   https://github.com/szelenka/shrink-linalg/blob/master/Dockerfile
 
 # Pick up some dependencies
 RUN apt-get update && \
@@ -41,14 +37,18 @@ RUN pip3 install --no-cache-dir -q --only-binary all --compile \
         scikit-learn \
         tensorboard \
         opencv-python \
-        torch \
-        torchvision \
         piexif \
         tifffile \
         future \
         fastjsonschema \
         polyline \
         pyclipper
+
+# specify cuda 11
+RUN pip3 install --no-cache-dir -q --only-binary all \
+        torch==1.7.1+cu110 \
+        torchvision==0.8.2+cu110 \
+        -f https://download.pytorch.org/whl/torch_stable.html
 
 # Suppress pip deprecation warning 
 COPY pip.conf /root/.pip/
