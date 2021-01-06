@@ -1,4 +1,4 @@
-FROM nvidia/cuda:11.0-runtime-ubuntu20.04
+FROM nvidia/cuda:10.2-runtime-ubuntu18.04
 
 LABEL maintainer "Jimmy Lee"
 
@@ -11,6 +11,7 @@ RUN apt-get update && \
         libgomp1 libglib2.0-0 \
         libopenblas-dev \
         liblapack-dev \
+        libgl1-mesa-glx \
         python3 \
         python3-dev \
         python3-pip \
@@ -24,8 +25,12 @@ RUN apt-get update && \
     apt-get purge -y --auto-remove && \
     rm -rf /var/lib/apt/lists/*
 
+# upgrade pip3 version for compatibility
+RUN pip3 install -q --no-cache-dir --upgrade --only-binary all pip
+
 # install python packages
-RUN pip3 install --no-cache-dir -q --only-binary all --compile \
+RUN pip3 install -q --no-cache-dir --only-binary all --compile \
+        pip \
         Cython \
         numpy \
         scipy \
@@ -35,7 +40,10 @@ RUN pip3 install --no-cache-dir -q --only-binary all --compile \
         tqdm \
         scikit-image \
         scikit-learn \
+        scikit-build \
         tensorboard \
+        torch \
+        torchvision \
         opencv-python \
         piexif \
         tifffile \
@@ -43,12 +51,6 @@ RUN pip3 install --no-cache-dir -q --only-binary all --compile \
         fastjsonschema \
         polyline \
         pyclipper
-
-# specify cuda 11
-RUN pip3 install --no-cache-dir -q --only-binary all \
-        torch==1.7.1+cu110 \
-        torchvision==0.8.2+cu110 \
-        -f https://download.pytorch.org/whl/torch_stable.html
 
 # Suppress pip deprecation warning 
 COPY pip.conf /root/.pip/
