@@ -3,7 +3,7 @@ name: Create and publish a Container image
 on:
   push:
     tags:
-      - "v*"
+      - "*"
 
 jobs:
   build:
@@ -24,8 +24,6 @@ jobs:
         uses: docker/metadata-action@v3
         with:
           images: rainbean/tensor
-          tags: |
-            type=semver,pattern={{major}}.{{minor}}
       
       - name: Build and push Docker image
         uses: docker/build-push-action@v2
