@@ -38,6 +38,7 @@ RUN pip3 install -q --no-cache-dir --only-binary all --compile \
         scikit-image \
         scikit-learn \
         scikit-build \
+        scikit-learn-intelex \
         tensorboard \
         opencv-python \
         future \
