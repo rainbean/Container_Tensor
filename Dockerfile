@@ -40,12 +40,7 @@ RUN pip3 install -q --no-cache-dir --only-binary all --compile \
         scikit-build \
         tensorboard \
         opencv-python \
-        piexif \
-        tifffile \
         future \
-        fastjsonschema \
-        polyline \
-        pyclipper \
         jupyterlab \
         ipywidgets
 
